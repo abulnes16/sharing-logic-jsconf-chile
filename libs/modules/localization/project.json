@@ -1,0 +1,9 @@
+{
+  "name": "localization",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/modules/localization/src",
+  "projectType": "library",
+  "tags": [],
+  "// targets": "to see all targets run: nx show project localization --web",
+  "targets": {}
+}

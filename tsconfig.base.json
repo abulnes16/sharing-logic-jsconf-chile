@@ -14,7 +14,15 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@sharing-logic-jsconf-chile/api": ["libs/data/api/src/index.ts"],
+      "@sharing-logic-jsconf-chile/localization": [
+        "libs/modules/localization/src/index.ts"
+      ],
+      "@sharing-logic-jsconf-chile/models": ["libs/models/src/index.ts"],
+      "@sharing-logic-jsconf-chile/store": ["libs/data/store/src/index.ts"],
+      "@sharing-logic-jsconf-chile/utils": ["libs/utils/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
