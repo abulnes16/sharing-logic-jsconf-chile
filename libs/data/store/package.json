@@ -1,6 +1,9 @@
 {
   "name": "@sharing-logic-jsconf-chile/store",
   "version": "0.0.1",
-  "dependencies": {},
+  "dependencies": {
+    "@reduxjs/toolkit": "*",
+    "react-redux": "*"
+  },
   "private": true
 }
