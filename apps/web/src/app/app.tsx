@@ -1,4 +1,5 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
+import { GlobalStateProvider } from '@sharing-logic-jsconf-chile/shared-ui';
 import styles from './app.module.css';
 
 import NxWelcome from './nx-welcome';
@@ -7,6 +8,7 @@ import { Route, Routes, Link } from 'react-router-dom';
 
 export function App() {
   return (
+    <GlobalStateProvider>
     <div>
       <NxWelcome title="web" />
 
@@ -47,6 +49,7 @@ export function App() {
       </Routes>
       {/* END: routes */}
     </div>
+    </GlobalStateProvider>
   );
 }
 
