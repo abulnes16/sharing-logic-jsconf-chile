@@ -1,12 +1,12 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-import styles from './app.module.css';
+import { GlobalStateProvider } from '@e-commerce-sharling-logic/ui';
 import NxWelcome from './nx-welcome';
 
 import { Route, Routes, Link } from 'react-router-dom';
 
 export function App() {
   return (
-    <div>
+    <GlobalStateProvider>
       <NxWelcome title="web" />
 
       {/* START: routes */}
@@ -45,7 +45,7 @@ export function App() {
         />
       </Routes>
       {/* END: routes */}
-    </div>
+    </GlobalStateProvider>
   );
 }
 
