@@ -1,0 +1,13 @@
+{
+  "name": "@e-commerce-sharling-logic/store",
+  "version": "0.0.1",
+  "dependencies": {
+    "tslib": "^2.3.0",
+    "@reduxjs/toolkit": "*",
+    "react-redux": "*"
+  },
+  "type": "commonjs",
+  "main": "./src/index.js",
+  "typings": "./src/index.d.ts",
+  "private": true
+}

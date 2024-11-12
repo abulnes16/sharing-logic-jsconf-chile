@@ -14,7 +14,10 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@e-commerce-sharling-logic/store": ["libs/data/store/src/index.ts"],
+      "@e-commerce-sharling-logic/ui": ["libs/ui/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
