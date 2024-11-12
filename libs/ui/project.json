@@ -4,16 +4,6 @@
   "sourceRoot": "libs/ui/src",
   "projectType": "library",
   "tags": [],
-  "targets": {
-    "build": {
-      "executor": "@nx/js:tsc",
-      "outputs": ["{options.outputPath}"],
-      "options": {
-        "outputPath": "dist/libs/ui",
-        "main": "libs/ui/src/index.ts",
-        "tsConfig": "libs/ui/tsconfig.lib.json",
-        "assets": ["libs/ui/*.md"]
-      }
-    }
-  }
+  "// targets": "to see all targets run: nx show project ui --web",
+  "targets": {}
 }

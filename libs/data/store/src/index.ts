@@ -1,1 +1,2 @@
-export * from './lib/store';
+export * from './store';
+export * from './slices/index';
