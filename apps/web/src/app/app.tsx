@@ -1,5 +1,5 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-import { GlobalStateProvider } from '@e-commerce-sharling-logic/ui';
+import { GlobalStateProvider, IMAGES } from '@e-commerce-sharling-logic/ui';
 import NxWelcome from './nx-welcome';
 
 import { Route, Routes, Link } from 'react-router-dom';

@@ -9,6 +9,18 @@
     "react": "*",
     "react-native": "*",
     "react-native-svg": "*",
-    "metro-config": "*"
-  }
+    "metro-config": "*",
+    "@nx/eslint-plugin": "*",
+    "react-native-svg-transformer": "*",
+    "jsonc-eslint-parser": "*",
+    "tslib": "*",
+    "@reduxjs/toolkit": "*",
+    "react-redux": "*",
+    "react-dom": "*",
+    "vite": "*",
+    "@vitejs/plugin-react": "*",
+    "@nx/vite": "*",
+    "esbuild": "*"
+  },
+  "devDependencies": {}
 }

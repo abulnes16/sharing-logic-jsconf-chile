@@ -1,3 +1,5 @@
+import { IMAGES } from '@e-commerce-sharling-logic/ui';
+
 /*
  * * * * * * * * * * * * * * * * * * * * * * * * * * * *
  This is a starter component and can be deleted.
@@ -435,7 +437,7 @@ export function NxWelcome({ title }: { title: string }) {
               Welcome {title} 👋
             </h1>
           </div>
-
+          <img src={IMAGES.LOGO} alt="Logo" />
           <div id="hero" className="rounded">
             <div className="text-container">
               <h2>
