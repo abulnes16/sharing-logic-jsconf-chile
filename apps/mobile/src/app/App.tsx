@@ -1,11 +1,14 @@
 import React from 'react';
 import { GlobalStateProvider } from '@e-commerce-sharling-logic/ui';
-import { LoginScreen } from './screens';
+import { NavigationContainer } from '@react-navigation/native';
+import { MainNavigator } from './navigation/MainNavigator';
 
 export const App = () => {
   return (
     <GlobalStateProvider>
-      <LoginScreen />
+      <NavigationContainer>
+        <MainNavigator />
+      </NavigationContainer>
     </GlobalStateProvider>
   );
 };

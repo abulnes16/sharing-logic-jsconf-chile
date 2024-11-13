@@ -20,7 +20,12 @@
     "vite": "*",
     "@vitejs/plugin-react": "*",
     "@nx/vite": "*",
-    "esbuild": "*"
+    "esbuild": "*",
+    "@react-navigation/native": "*",
+    "@react-navigation/native-stack": "*",
+    "@react-navigation/elements": "*",
+    "react-native-safe-area-context": "*",
+    "react-native-screens": "*"
   },
   "devDependencies": {}
 }
