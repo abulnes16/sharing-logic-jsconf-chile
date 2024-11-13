@@ -9,3 +9,6 @@ export * from './theme';
 
 // Assets
 export * from './assets';
+
+// Localization
+export * from './localization';

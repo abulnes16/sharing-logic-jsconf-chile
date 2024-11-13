@@ -17,7 +17,8 @@
     "paths": {
       "@e-commerce-sharling-logic/models": ["libs/models/src/index.ts"],
       "@e-commerce-sharling-logic/store": ["libs/data/store/src/index.ts"],
-      "@e-commerce-sharling-logic/ui": ["libs/ui/src/index.ts"]
+      "@e-commerce-sharling-logic/ui": ["libs/ui/src/index.ts"],
+      "@mobile/components": ["apps/mobile/src/app/components/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
