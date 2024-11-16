@@ -1,11 +1,12 @@
-import { View, Text } from 'react-native';
 import React from 'react';
+import { View, Text } from 'react-native';
+import { Header, Screen } from '@mobile/components';
 
 const CartScreen = () => {
   return (
-    <View>
-      <Text>CartScreen</Text>
-    </View>
+    <Screen>
+      <Header title="My Cart" />
+    </Screen>
   );
 };
 

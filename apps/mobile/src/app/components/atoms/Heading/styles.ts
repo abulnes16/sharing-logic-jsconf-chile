@@ -1,10 +1,11 @@
-import { HeadingTextSize } from '@e-commerce-sharling-logic/ui';
+import { COLORS, HeadingTextSize } from '@e-commerce-sharling-logic/ui';
 import { StyleSheet } from 'react-native';
 
 export const styles = StyleSheet.create({
   base: {
     fontWeight: 'bold',
     textAlign: 'center',
+    color: COLORS.darkText,
   },
   h1: {
     fontSize: HeadingTextSize.xl,

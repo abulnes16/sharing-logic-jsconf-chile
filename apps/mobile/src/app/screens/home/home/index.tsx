@@ -1,11 +1,12 @@
 import { View, Text } from 'react-native';
 import React from 'react';
+import { Header, Screen } from '@mobile/components';
 
 const HomeScreen = () => {
   return (
-    <View>
-      <Text>HomeScreen</Text>
-    </View>
+    <Screen>
+      <Header title="Our Products" />
+    </Screen>
   );
 };
 
