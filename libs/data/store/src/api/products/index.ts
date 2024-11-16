@@ -1,12 +1,12 @@
 import { Product } from '@e-commerce-sharling-logic/models';
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
-import { PaginationParams } from '../models';
+import { PaginationParams, ProductApiResponse } from '../models';
 
 export const productsApi = createApi({
   reducerPath: 'productsApi',
   baseQuery: fetchBaseQuery({ baseUrl: 'https://dummyjson.com' }),
   endpoints: (builder) => ({
-    getProducts: builder.query<Product[], PaginationParams>({
+    getProducts: builder.query<ProductApiResponse, PaginationParams>({
       query: ({ limit, skip }) => `/products?limit=${limit}&skip=${skip}`,
     }),
     getProductById: builder.query<Product, number>({

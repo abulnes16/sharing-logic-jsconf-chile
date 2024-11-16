@@ -1,9 +1,10 @@
 import React from 'react';
-import { View } from 'react-native';
+import { View, Image } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { Heading } from '../../atoms';
 import { TouchableIcon } from '../../molecules';
 import { styles } from './styles';
+import { IMAGES } from '@e-commerce-sharling-logic/ui';
 
 interface HeaderProps {
   title: string;
@@ -22,6 +23,7 @@ const Header = ({ title, showBackButton = false }: HeaderProps) => {
           name="arrow-back"
         />
       )}
+      <Image source={{ uri: IMAGES.LOGO }} style={styles.smallLogo} />
       <Heading type="h3">{title}</Heading>
     </View>
   );

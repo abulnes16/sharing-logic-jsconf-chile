@@ -4,7 +4,7 @@ import { PAGE_SIZE } from '../constants/pagination';
 
 const useProducts = () => {
   const [getProducts, { data, isLoading, error }] = useLazyGetProductsQuery();
-  const [limit, setLimit] = useState(0);
+  const [limit, setLimit] = useState(PAGE_SIZE);
 
   const fetchProducts = useCallback(async () => {
     try {
@@ -17,17 +17,28 @@ const useProducts = () => {
     }
   }, [limit, getProducts]);
 
+  const clearFetchProduct = async () => {
+    try {
+      await getProducts({ limit: 30, skip: 0 });
+      setLimit(PAGE_SIZE);
+      return true;
+    } catch (e) {
+      return false;
+    }
+  };
+
   useEffect(() => {
     fetchProducts();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return {
-    products: data,
+    products: data?.products,
     isLoading,
     error,
     limit,
     fetchProducts,
+    clearFetchProduct,
   };
 };
 

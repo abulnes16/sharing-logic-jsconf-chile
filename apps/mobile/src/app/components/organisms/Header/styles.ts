@@ -1,4 +1,4 @@
-import { Spacing } from '@e-commerce-sharling-logic/ui';
+import { BORDER_RADIUS, Spacing } from '@e-commerce-sharling-logic/ui';
 import { StyleSheet } from 'react-native';
 
 export const styles = StyleSheet.create({
@@ -8,6 +8,13 @@ export const styles = StyleSheet.create({
     marginVertical: Spacing.md,
     flexDirection: 'row',
     alignItems: 'center',
+  },
+
+  smallLogo: {
+    width: 30,
+    height: 30,
+    borderRadius: BORDER_RADIUS.full,
+    marginRight: Spacing.md,
   },
 
   backArrow: {
