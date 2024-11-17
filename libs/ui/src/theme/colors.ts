@@ -5,4 +5,5 @@ export const COLORS = {
   darkText: '#4F4F4F',
   border: '#E5E5E5',
   white: '#FFFFFF',
+  danger: '#FF6E49',
 };

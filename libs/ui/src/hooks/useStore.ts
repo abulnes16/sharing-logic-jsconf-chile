@@ -34,8 +34,10 @@ const useStore = () => {
   };
 
   const onAddToCart = (product: Product) => {
-    const { title, id, thumbnail } = product;
-    dispatch(addProduct({ name: title, id, image: thumbnail, quantity }));
+    const { title, id, thumbnail, price } = product;
+    dispatch(
+      addProduct({ name: title, id, image: thumbnail, quantity, price })
+    );
   };
 
   const onRemoveFromCart = (id: number) => {
@@ -47,6 +49,13 @@ const useStore = () => {
 
   const onRemoveQuantityInCart = (productId: number) =>
     dispatch(removeQuantityInCart(productId));
+
+  const cartHasProducts = cart.length !== 0;
+
+  const total = cart.reduce<number>((sum, product) => {
+    sum += product.quantity * product.price;
+    return sum;
+  }, 0);
 
   return {
     cart,
@@ -60,6 +69,8 @@ const useStore = () => {
     onAddQuantityInCart,
     onRemoveQuantityInCart,
     validationError,
+    total,
+    cartHasProducts,
   };
 };
 
