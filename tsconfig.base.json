@@ -19,7 +19,9 @@
       "@e-commerce-sharling-logic/store": ["libs/data/store/src/index.ts"],
       "@e-commerce-sharling-logic/ui": ["libs/ui/src/index.ts"],
       "@mobile/components": ["apps/mobile/src/app/components/index.ts"],
-      "@mobile/screens": ["apps/mobile/src/app/screens/index.ts"]
+      "@mobile/screens": ["apps/mobile/src/app/screens/index.ts"],
+      "@mobile/navigation": ["apps/mobile/src/app/navigation/index.ts"],
+      
     }
   },
   "exclude": ["node_modules", "tmp"]

@@ -1,11 +1,11 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import Icon from 'react-native-vector-icons/Octicons';
-import { CartScreen, HomeScreen, ProfileScreen } from '@mobile/screens';
+import { CartScreen, ProfileScreen } from '@mobile/screens';
 import { COLORS, Localization } from '@e-commerce-sharling-logic/ui';
 import { NavigationIcon } from '@mobile/components';
 import { RouteProp } from '@react-navigation/native';
+import { ProductNavigator } from './ProductsNavigator';
 
-type HomeTabsParamList = {
+export type HomeTabsParamList = {
   Home: undefined;
   Cart: undefined;
   Profile: undefined;
@@ -51,7 +51,7 @@ export const HomeNavigator = () => {
     >
       <HomeTabs.Screen
         name="Home"
-        component={HomeScreen}
+        component={ProductNavigator}
         options={{
           tabBarLabel: Localization.navigation.home,
         }}

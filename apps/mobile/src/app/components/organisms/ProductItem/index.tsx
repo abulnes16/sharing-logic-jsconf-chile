@@ -1,31 +1,26 @@
-import {
-  View,
-  StyleProp,
-  ViewStyle,
-  TouchableOpacity,
-  Image,
-} from 'react-native';
+import { View, StyleProp, ViewStyle, TouchableOpacity } from 'react-native';
 import React from 'react';
 import { Product } from '@e-commerce-sharling-logic/models';
 import { styles } from './styles';
-import { BodyText, Heading } from '../../atoms';
-import { TouchableIcon } from '../../molecules';
+import { BodyText } from '../../atoms';
+import { CircleFadeImage, TouchableIcon } from '../../molecules';
 import { COLORS } from '@e-commerce-sharling-logic/ui';
 
 interface ProductItemProps {
   containerStyle?: StyleProp<ViewStyle>;
   product: Product;
+  onPress: () => void;
 }
 
-const ProductItem = ({ containerStyle, product }: ProductItemProps) => {
+const ProductItem = ({
+  containerStyle,
+  product,
+  onPress,
+}: ProductItemProps) => {
   return (
-    <TouchableOpacity style={[styles.card, containerStyle]}>
+    <TouchableOpacity onPress={onPress} style={[styles.card, containerStyle]}>
       <View style={styles.headerContainer}>
-        <View style={styles.fadeContainer}>
-          <View style={styles.imageContainer}>
-            <Image source={{ uri: product.thumbnail }} style={styles.image} />
-          </View>
-        </View>
+        <CircleFadeImage uri={product.thumbnail} />
       </View>
       <View>
         <BodyText

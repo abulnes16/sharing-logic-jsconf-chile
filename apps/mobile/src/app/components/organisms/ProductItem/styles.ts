@@ -21,29 +21,6 @@ export const styles = StyleSheet.create({
     marginBottom: Spacing.md,
   },
 
-  fadeContainer: {
-    width: 95,
-    height: 95,
-    backgroundColor: `${COLORS.primary}3F`,
-    borderRadius: BORDER_RADIUS.full,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-
-  imageContainer: {
-    backgroundColor: `${COLORS.primary}AF`,
-    width: 70,
-    height: 70,
-    borderRadius: BORDER_RADIUS.full,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-
-  image: {
-    width: 50,
-    height: 50,
-  },
-
   category: {
     textTransform: 'capitalize',
     color: COLORS.darkText,

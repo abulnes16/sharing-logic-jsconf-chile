@@ -43,3 +43,10 @@ export interface Review {
   reviewerName: string;
   reviewerEmail: string;
 }
+
+export interface CartProduct {
+  id: number;
+  name: string;
+  image: string;
+  quantity: number;
+}
