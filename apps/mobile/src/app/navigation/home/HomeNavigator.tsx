@@ -4,6 +4,7 @@ import { COLORS, Localization } from '@e-commerce-sharling-logic/ui';
 import { NavigationIcon } from '@mobile/components';
 import { RouteProp } from '@react-navigation/native';
 import { ProductNavigator } from './ProductsNavigator';
+import { CartNavigator } from './CartNavigator';
 
 export type HomeTabsParamList = {
   Home: undefined;
@@ -58,7 +59,7 @@ export const HomeNavigator = () => {
       />
       <HomeTabs.Screen
         name="Cart"
-        component={CartScreen}
+        component={CartNavigator}
         options={{
           tabBarLabel: Localization.navigation.cart,
         }}

@@ -67,6 +67,7 @@ const storeSlice = createSlice({
     setStoreError: (state, action: PayloadAction<StoreState['error']>) => {
       state.error = action.payload;
     },
+    clear: () => initialState,
   },
 });
 

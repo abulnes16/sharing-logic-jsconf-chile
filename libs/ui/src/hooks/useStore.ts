@@ -8,8 +8,14 @@ import {
 import { useState } from 'react';
 
 const useStore = () => {
-  const { addProduct, removeProduct, removeQuantityInCart, addQuantityInCart } =
-    StoreActions;
+  const {
+    addProduct,
+    removeProduct,
+    removeQuantityInCart,
+    addQuantityInCart,
+    setStoreLoader,
+    clear,
+  } = StoreActions;
   const cart = useAppSelector(StoreSelectors.getCart);
   const isLoading = useAppSelector(StoreSelectors.getStoreLoading);
   const error = useAppSelector(StoreSelectors.getStoreError);
@@ -57,6 +63,15 @@ const useStore = () => {
     return sum;
   }, 0);
 
+  const onPay = (onSuccessPay: () => void) => {
+    dispatch(setStoreLoader(true));
+    setTimeout(() => {
+      onSuccessPay();
+      dispatch(clear());
+      dispatch(setStoreLoader(false));
+    }, 2000);
+  };
+
   return {
     cart,
     isLoading,
@@ -71,6 +86,7 @@ const useStore = () => {
     validationError,
     total,
     cartHasProducts,
+    onPay,
   };
 };
 

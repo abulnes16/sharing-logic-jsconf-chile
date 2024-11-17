@@ -5,13 +5,19 @@ import {
   Button,
   CartItem,
   Header,
+  Loader,
   Screen,
   Spacer,
 } from '@mobile/components';
 import { Localization, useStore } from '@e-commerce-sharling-logic/ui';
 import { styles } from './styles';
+import { NativeStackScreenProps } from '@react-navigation/native-stack';
+import { CartParamList } from '@mobile/navigation';
 
-const CartScreen = () => {
+interface CartScreenProps
+  extends NativeStackScreenProps<CartParamList, 'CartDisplay'> {}
+
+const CartScreen = ({ navigation }: CartScreenProps) => {
   const {
     cart,
     onRemoveQuantityInCart,
@@ -19,7 +25,24 @@ const CartScreen = () => {
     onRemoveFromCart,
     cartHasProducts,
     total,
+    onPay,
+    isLoading,
   } = useStore();
+
+  const onSubmit = () => {
+    onPay(() => {
+      navigation.replace('Success');
+    });
+  };
+
+  const onRenderButton = () => {
+    if (!cartHasProducts) return;
+
+    if (isLoading) return <Loader />;
+
+    return <Button title={Localization.home.pay} onPress={onSubmit} />;
+  };
+
   return (
     <Screen contentStyle={styles.screen}>
       <Header title={Localization.home.myCart} />
@@ -52,7 +75,7 @@ const CartScreen = () => {
         </>
       )}
 
-      {cartHasProducts && <Button title={Localization.home.pay} />}
+      {onRenderButton()}
     </Screen>
   );
 };
