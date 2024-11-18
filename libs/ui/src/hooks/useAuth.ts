@@ -21,11 +21,12 @@ const useAuth = () => {
     }, 2000);
   };
 
-  const logout = () => {
+  const logout = (afterLogout?: () => void) => {
     dispatch(setAuthLoading(true));
     setTimeout(() => {
       dispatch(setIsLoggedIn(false));
       dispatch(setAuthLoading(false));
+      afterLogout && afterLogout();
     }, 1000);
   };
   return {
