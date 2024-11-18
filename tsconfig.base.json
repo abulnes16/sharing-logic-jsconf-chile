@@ -21,6 +21,7 @@
       "@mobile/components": ["apps/mobile/src/app/components/index.ts"],
       "@mobile/screens": ["apps/mobile/src/app/screens/index.ts"],
       "@mobile/navigation": ["apps/mobile/src/app/navigation/index.ts"],
+      "@web/pages": ["apps/web/src/app/pages/index.ts"]
       
     }
   },
