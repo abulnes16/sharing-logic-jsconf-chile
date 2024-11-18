@@ -16,7 +16,7 @@ const ProductItem = ({
   containerStyle = {},
 }: ProductItemProps) => {
   return (
-    <Box sx={{ ...styles.card, ...containerStyle }}>
+    <Box onClick={onPress} sx={{ ...styles.card, ...containerStyle }}>
       <Box sx={styles.headerContainer}>
         <CircleFadedImage uri={product.thumbnail} width={125} height={125} />
       </Box>

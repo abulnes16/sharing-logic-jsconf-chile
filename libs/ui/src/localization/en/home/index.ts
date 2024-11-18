@@ -2,6 +2,7 @@ export default {
   // Home Screen
   ourProducts: 'Our Products',
   addToCart: 'Add to cart',
+  emptyProduct: 'You need to add at least one product to add them to the cart',
   pay: 'Pay',
   // Cart Screen
   myCart: 'My Cart',
