@@ -8,6 +8,7 @@ export const styles = {
   emptyCartText: {
     textAlign: 'center',
     color: COLORS.darkText,
+    my: Spacing.xs,
   },
   cartItemsPlaceholder: {
     textAlign: 'center',
