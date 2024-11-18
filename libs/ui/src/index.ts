@@ -12,3 +12,6 @@ export * from './assets';
 
 // Localization
 export * from './localization';
+
+// Components
+export * from './components';
