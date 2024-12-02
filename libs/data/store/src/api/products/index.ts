@@ -8,6 +8,11 @@ export const productsApi = createApi({
   endpoints: (builder) => ({
     getProducts: builder.query<ProductApiResponse, PaginationParams>({
       query: ({ limit, skip }) => `/products?limit=${limit}&skip=${skip}`,
+      merge: (currentProducts, newProducts) => {
+        console.log('Current Products', currentProducts.products);
+        console.log('New Products', newProducts.products);
+        currentProducts.products.push(...newProducts.products);
+      },
     }),
     getProductById: builder.query<Product, number>({
       query: (id) => `/products/${id}`,

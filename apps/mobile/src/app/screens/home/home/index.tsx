@@ -14,8 +14,7 @@ export interface HomeScreenProps
   extends NativeStackScreenProps<ProductsParamList, 'Products'> {}
 
 const HomeScreen = ({ navigation }: HomeScreenProps) => {
-  const { products, isLoading, fetchProducts, clearFetchProduct } =
-    useProducts();
+  const { products, isLoading, fetchMore, clearFetchProduct } = useProducts();
 
   const onSeeDetails = (productId: number, productName: string) => {
     navigation.navigate('ProductDetail', { id: productId, name: productName });
@@ -45,8 +44,8 @@ const HomeScreen = ({ navigation }: HomeScreenProps) => {
             onPress={() => onSeeDetails(item.id, item.title)}
           />
         )}
-        onEndReached={fetchProducts}
-        onEndReachedThreshold={0.1}
+        onEndReached={fetchMore}
+        onEndReachedThreshold={0.01}
       />
     </Screen>
   );

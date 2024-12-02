@@ -21,6 +21,7 @@ import {
 } from '@e-commerce-sharling-logic/ui';
 import { View } from 'react-native';
 import { styles } from './style';
+import Toast from 'react-native-toast-message';
 
 interface ProductDetailProps
   extends NativeStackScreenProps<ProductsParamList, 'ProductDetail'> {}
@@ -34,6 +35,12 @@ const ProductDetails = ({ route, navigation }: ProductDetailProps) => {
   const onSubmitToCart = () => {
     if (quantity === 0) return;
     onAddToCart(product);
+
+    Toast.show({
+      type: 'success',
+      text1: Localization.success.productAdded,
+      position: 'bottom',
+    });
     navigation.goBack();
   };
 

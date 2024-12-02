@@ -4,27 +4,32 @@ import { PAGE_SIZE } from '../constants/pagination';
 
 const useProducts = () => {
   const [getProducts, { data, isLoading, error }] = useLazyGetProductsQuery();
-  const [limit, setLimit] = useState(PAGE_SIZE);
+  const [skip, setSkip] = useState(0);
 
   const fetchProducts = useCallback(async () => {
     try {
-      await getProducts({ limit, skip: limit });
-      setLimit((previousLimit) => previousLimit + PAGE_SIZE);
+      await getProducts({ limit: PAGE_SIZE, skip });
+      setSkip((previousLimit) => previousLimit + PAGE_SIZE);
       return true;
     } catch (e) {
       console.log(e);
       return false;
     }
-  }, [limit, getProducts]);
+  }, [skip, getProducts]);
 
   const clearFetchProduct = async () => {
     try {
-      await getProducts({ limit: 30, skip: 0 });
-      setLimit(PAGE_SIZE);
+      await getProducts({ limit: 100, skip: 0 });
+      setSkip(PAGE_SIZE);
       return true;
     } catch (e) {
       return false;
     }
+  };
+
+  const fetchMore = async () => {
+    if (isLoading) return;
+    await fetchProducts();
   };
 
   useEffect(() => {
@@ -36,9 +41,10 @@ const useProducts = () => {
     products: data?.products,
     isLoading,
     error,
-    limit,
+    skip,
     fetchProducts,
     clearFetchProduct,
+    fetchMore,
   };
 };
 

@@ -12,6 +12,7 @@ import {
   CircleFadedImage,
   Localization,
   ProductQuantityButton,
+  useNotification,
   useProductDetail,
   useStore,
 } from '@e-commerce-sharling-logic/ui';
@@ -24,6 +25,7 @@ function ProductDetail() {
   const { product, isLoading } = useProductDetail(Number(id));
   const { quantity, addQuantity, removeQuantity, onAddToCart } = useStore();
   const [showAlert, setShowAlert] = useState(false);
+  const { displayNotification } = useNotification();
 
   if (isLoading) {
     return <CircularProgress />;
@@ -38,6 +40,7 @@ function ProductDetail() {
       setShowAlert(true);
       return;
     }
+    displayNotification(Localization.success.productAdded, 'success');
     onAddToCart(product);
     navigate(-1);
   };

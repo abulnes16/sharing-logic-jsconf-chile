@@ -1,5 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit';
-import { AuthReducer, StoreReducer } from './slices';
+import { AuthReducer, StoreReducer, NotificationReducer } from './slices';
 import { useDispatch, useSelector } from 'react-redux';
 import { productsApi } from './api/products';
 
@@ -7,6 +7,7 @@ export const store = configureStore({
   reducer: {
     authentication: AuthReducer,
     store: StoreReducer,
+    notifications: NotificationReducer,
     [productsApi.reducerPath]: productsApi.reducer,
   },
   middleware: (getDefaultMiddleware) =>

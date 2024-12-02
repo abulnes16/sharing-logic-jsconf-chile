@@ -27,7 +27,8 @@
     "react-native-safe-area-context": "*",
     "react-native-screens": "*",
     "@react-navigation/bottom-tabs": "*",
-    "react-native-vector-icons": "*"
+    "react-native-vector-icons": "*",
+    "react-native-toast-message": "*"
   },
   "devDependencies": {}
 }
