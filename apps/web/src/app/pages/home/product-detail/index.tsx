@@ -40,9 +40,9 @@ function ProductDetail() {
       setShowAlert(true);
       return;
     }
-    displayNotification(Localization.success.productAdded, 'success');
     onAddToCart(product);
-    navigate(-1);
+    displayNotification(Localization.success.productAdded, 'success');
+    navigate('/');
   };
 
   return (
